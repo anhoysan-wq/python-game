@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEURO_SNAKE // 贪吃蛇</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="brand">
+          <span class="brand__glyph">◇</span>
+          <h1 class="brand__title">NEURO_SNAKE</h1>
+          <span class="brand__tag">v1.0</span>
+        </div>
+        <p class="header__subtitle">暗网协议 · 原生驱动</p>
+      </header>
+
+      <main class="main">
+        <aside class="hud hud--left">
+          <div class="panel">
+            <div class="panel__label">SCORE</div>
+            <div id="score" class="panel__value">0000</div>
+          </div>
+          <div class="panel">
+            <div class="panel__label">HIGH</div>
+            <div id="highScore" class="panel__value panel__value--dim">0000</div>
+          </div>
+          <div class="panel panel--compact">
+            <div class="panel__label">LENGTH</div>
+            <div id="length" class="panel__value panel__value--small">0</div>
+          </div>
+        </aside>
+
+        <section class="stage-wrap">
+          <div class="stage-frame">
+            <div class="stage-frame__corner stage-frame__corner--tl"></div>
+            <div class="stage-frame__corner stage-frame__corner--tr"></div>
+            <div class="stage-frame__corner stage-frame__corner--bl"></div>
+            <div class="stage-frame__corner stage-frame__corner--br"></div>
+            <canvas id="game" width="480" height="480" aria-label="贪吃蛇游戏画布"></canvas>
+            <div id="overlay" class="overlay">
+              <div class="overlay__card">
+                <p class="overlay__kicker">SYSTEM READY</p>
+                <h2 class="overlay__title">按空格开始</h2>
+                <p class="overlay__hint">方向键 / WASD 移动 · P 暂停 · 暂停时按空格继续</p>
+              </div>
+            </div>
+          </div>
+          <div class="status-bar">
+            <span id="statusText" class="status-bar__text">待机</span>
+            <span class="status-bar__dots"><span></span><span></span><span></span></span>
+          </div>
+        </section>
+
+        <aside class="hud hud--right">
+          <div class="panel panel--keys">
+            <div class="panel__label">CONTROLS</div>
+            <ul class="key-list">
+              <li><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> 移动</li>
+              <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动</li>
+              <li><kbd>Space</kbd> 开始 / 重开</li>
+              <li><kbd>P</kbd> 暂停</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <span class="footer__mono">HTML · CSS · JS // NO FRAMEWORKS</span>
+      </footer>
+    </div>
+    <script src="js/game.js"></script>
+  </body>
+</html>
